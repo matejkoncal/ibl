@@ -20,7 +20,7 @@ export const ResultTable = ({ tableSource }: ResultTableProps) => {
           <TableRow key={key + index + report.text}>
             <TableCell align="center">{report.queryType}</TableCell>
             <DateTimeCell date={new Date(report.reportTime)} locales="sk-SK" />
-            <BodyCell text={report.text} />
+            <BodyCell>{report.text}</BodyCell>
           </TableRow>
         ))}
       </Fragment>

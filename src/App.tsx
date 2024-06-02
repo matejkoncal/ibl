@@ -1,5 +1,4 @@
 import { Box, CssBaseline, Stack } from "@mui/material";
-import "./App.css";
 import { ResultTable } from "./resultTable/resultTable";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

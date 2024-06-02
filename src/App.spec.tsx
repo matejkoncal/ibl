@@ -10,19 +10,19 @@ describe("App", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("should has disabled button when no location is set", () => {
+  it("should have disabled button when no location is set", () => {
     render(<App />);
     expect(screen.getByRole("button")).toHaveProperty("disabled", true);
   });
 
-  it("should has disabled button when no message type is set but location is set", async () => {
+  it("should have disabled button when no message type is set but location is set", async () => {
     render(<App />);
     const airportsInput = screen.getByLabelText("Airports");
     await userEvent.type(airportsInput, "LZIB");
     expect(screen.getByRole("button")).toHaveProperty("disabled", true);
   });
 
-  it("should has enabled button when location and message type is set", async () => {
+  it("should have enabled button when location and message type is set", async () => {
     render(<App />);
     const airportsInput = screen.getByLabelText("Airports");
     await userEvent.type(airportsInput, "LZIB");

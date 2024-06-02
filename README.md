@@ -29,7 +29,7 @@
 
 ## 📍 Overview
 
-Opmet is a TypeScript-based web application that offers an easy-to-use interface for reading aviation weather reports. Utilizing the strengths of React and Material-UI for frontend development, it enables users to parse and visualize METAR and TAF reports globally. The application assures code quality using Jest for testing, detailed TypeScript configurations, and strict linting rules. Built using Vite, it ensures seamless integration of React components, improving efficiency in weather data interpretation.
+Opmet is a TypeScript-based web application that offers an easy-to-use interface for reading aviation weather reports. Utilizing the strengths of React and Material-UI for frontend development, it enables users to parse and visualize METAR and TAF reports globally. The application assures code quality using Jest for testing, detailed TypeScript configurations, and strict linting rules. Built using Vite.
 
 ## Live
 
