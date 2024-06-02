@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import { ResultTable } from "./resultTable";
+import { ResultTable, TableSource } from "./resultTable";
 import "@testing-library/jest-dom";
-import { WeatherReport } from "../opmet";
 
 describe("ResultTable", () => {
   it("should render", () => {
@@ -19,7 +18,7 @@ describe("ResultTable", () => {
           text: "METAR LZIB 101000Z 31010KT 9999 FEW030 BKN100 10/05 Q1023 NOSIG",
         },
       ],
-    } as Record<string, WeatherReport[]>;
+    } as TableSource;
     render(<ResultTable tableSource={tableSource} />);
     expect(screen.getByText("METAR")).toBeInTheDocument();
   });
@@ -34,7 +33,7 @@ describe("ResultTable", () => {
           text: "METAR LZIB 101000Z 31010KT 9999 FEW030 BKN100 10/05 Q1023 NOSIG",
         },
       ],
-    } as Record<string, WeatherReport[]>;
+    } as TableSource;
     render(<ResultTable tableSource={tableSource} />);
     expect(screen.getByText("10. 10. 2021, 12:00")).toBeInTheDocument();
   });
@@ -49,7 +48,7 @@ describe("ResultTable", () => {
           text: "METAR LZIB 101000Z 31010KT 9999 FEW030 BKN100 10/05 Q1023 NOSIG",
         },
       ],
-    } as Record<string, WeatherReport[]>;
+    } as TableSource;
     render(<ResultTable tableSource={tableSource} />);
     expect(screen.getByText("BKN100")).toHaveStyle("color: red");
     expect(screen.getByText("FEW030")).toHaveStyle("color: blue");

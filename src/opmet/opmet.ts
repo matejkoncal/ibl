@@ -1,4 +1,5 @@
-import { MessageTypeState } from "./messageTypeSelector/messageTypeSelector";
+import { MessageTypeState } from "../messageTypeSelector/messageTypeSelector";
+import { TableSource } from "../resultTable/resultTable";
 
 export type WeatherReport = {
   queryType: string;
@@ -7,7 +8,7 @@ export type WeatherReport = {
   text: string;
 };
 
-export async function query(airports: string, countries: string, messageTypes: MessageTypeState): Promise<Record<string, WeatherReport[]>> {
+export async function query(airports: string, countries: string, messageTypes: MessageTypeState): Promise<TableSource> {
   const response = await fetch("https://ogcie.iblsoft.com/ria/opmetquery", {
     method: "POST",
     headers: {
@@ -37,5 +38,5 @@ export async function query(airports: string, countries: string, messageTypes: M
     throw new Error(parsedResponse.error.message);
   }
 
-  return Object.groupBy(parsedResponse.result as WeatherReport[], ({ stationId }) => stationId) as Record<string, WeatherReport[]>;
+  return Object.groupBy(parsedResponse.result as WeatherReport[], ({ stationId }) => stationId) as TableSource;
 }

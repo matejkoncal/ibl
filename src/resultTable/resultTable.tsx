@@ -1,12 +1,14 @@
 import { Paper, Table, TableBody, TableCell, TableContainer, TableRow } from "@mui/material";
 import { Fragment } from "react/jsx-runtime";
-import { WeatherReport } from "../opmet";
 import { GroupHeader } from "./groupHeader/groupHeader";
 import { DateTimeCell } from "./dateTimeCell/dateTimeCell";
 import { BodyCell } from "./bodyCell/bodyCell";
+import { WeatherReport } from "../opmet/opmet";
+
+export type TableSource = Record<string, WeatherReport[]>;
 
 type ResultTableProps = {
-  tableSource: Record<string, WeatherReport[]>;
+  tableSource: TableSource;
 };
 
 export const ResultTable = ({ tableSource }: ResultTableProps) => {
